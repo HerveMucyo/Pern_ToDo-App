@@ -1,50 +1,93 @@
-This is a simple Node.js application that uses PostgreSQL as the database. It provides an API that can be tested using Postman.
+---
 
- Prerequisites
+# PERN Todo List App
 
-- Node.js installed. [Download Node.js](https://nodejs.org/)
-- PostgreSQL installed. [Download PostgreSQL](https://www.postgresql.org/)
-- Postman for testing the API. [Download Postman](https://www.postman.com/)
+A simple todo list application built using the PERN (PostgreSQL, Express, React, Node.js) stack.
 
- Getting Started
+## Features
 
-1. Clone the repository:
+- Add new todos
+- View all todos
+- Edit existing todos
+- Delete todos
 
-git clone https://github.com/NKUBITOYIMANZI/NodeJsDemo.git
+## Technologies Used
 
+- PostgreSQL: A powerful, open-source relational database system used for storing todo data.
+- Express.js: A minimal and flexible Node.js web application framework used for building the backend API.
+- React.js: A JavaScript library for building user interfaces used for creating the frontend interface.
+- Node.js: A JavaScript runtime environment used for running the backend server.
+- CORS: A Node.js package for providing a Connect/Express middleware that can be used to enable CORS with various options.
 
-2. Install dependencies:
+## Getting Started
 
-cd NodeJsDemo
+To get started with the todo list app, follow these steps:
+
+1. **Clone the repository:**
+
+```
+git clone <repository_url>
+```
+
+2. **Install Dependencies:**
+
+Navigate to the project directory and install the required dependencies for both the frontend and backend:
+
+```
+cd pern-todo-app
+cd client
 npm install
+cd ..
+cd server
+npm install
+```
 
-3. Set up the PostgreSQL database:
+3. **Set Up the Database:**
 
-   - Create a new PostgreSQL database.
-   - Update the database connection details in `config/db.js`.
+Create a PostgreSQL database named `pern_todo`. You can use the following command:
 
-4. Run the application:
+```
+createdb pern_todo
+```
 
+Then, import the `todo.sql` file located in the `server/database` directory to set up the `todo` table.
+
+4. **Configure Environment Variables:**
+
+Create a `.env` file in the `server` directory and add the following environment variables:
+
+```
+DB_USER=your_postgres_username
+DB_PASSWORD=your_postgres_password
+DB_HOST=localhost
+DB_PORT=5432
+DB_DATABASE=pern_todo
+```
+
+5. **Start the Development Servers:**
+
+Start the backend server and frontend development server separately:
+
+For the backend:
+
+```
+cd server
 npm start
+```
 
-The application should now be running at `http://localhost:3000`.
+For the frontend:
 
-API Endpoints
+```
+cd client
+npm start
+```
 
-- GET /api/endpoint1:** Description of the first API endpoint.
-- POST /api/endpoint2:** Description of the second API endpoint.
-- ...
+6. **Access the Application:**
 
-Testing with Postman
+Open your web browser and navigate to `http://localhost:3000` to access the todo list app.
 
-1. Import the provided Postman collection (`postman_collection.json`) into Postman.
-2. Update the collection environment variables for the API URL.
+## License
 
-Now, you can use Postman to test the various API endpoints.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
- Configuration
-
-Update the database connection details, API port, or any other configuration parameters in the `config` folder.
-
-
-Now, you can use Postman to test the various API endpoints.
+---
